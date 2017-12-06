@@ -1,0 +1,114 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800i');
+
+// Variables
+@import "variables";
+$red: #AB1D1C;
+
+body {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  .nav-link {
+    padding-right: 0px;
+    padding-left: 70px;
+    margin-left: 30px;
+    display: block;
+    padding: 0.5rem 0rem;
+  }
+  margin-top: 10px;
+  font-weight: 300;
+  a {
+    color: $red;
+    text-align: right;
+    &:hover {
+      color: white;
+    }
+  }
+  h4 {
+  position: relative;
+  margin: 0px auto;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.7px;
+  }
+}
+
+.jumbotron {
+  min-height: 560px;
+  background: $red;
+  border-radius: 2px;
+  h1  {
+
+    font-size: 11em;
+      font-weight: bold;
+      position: relative;
+      bottom: 0px;
+      line-height: 146px;
+      letter-spacing: -8px;
+  }
+}
+
+.createGame {
+  .addPlayer {
+    button {
+      width: 80%;
+      height: 175px;
+      position: relative;
+      margin: 0px auto;
+    }
+    i {
+      font-size: 56px;
+      &:nth-of-type(2){
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+h1.shotClock {
+  font-size: 120px;
+  padding-top: 0px;
+  margin-top: -28px;
+  color: $red;
+}
+
+.players {
+  .badge {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 80px;
+  }
+}
+
+footer {
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+img.playerImg_Game {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background: $red;
+}
+
+.icon-basketball {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.shotClockRow {
+  margin-top: 45px;
+  p {
+    font-size: 27px;
+    margin-bottom: 4px;
+  }
+}
