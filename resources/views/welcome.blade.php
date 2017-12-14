@@ -10,17 +10,31 @@
 
   @else
 
+
+
+    <div class="row">
+      <div class="col-4">
+          <img class="profileImg" src="{{ asset(Auth::user()->image) }}" alt="">
+      </div>
+      <div class="col-8">
+
+      </div>
+    </div>
+
+
+
+
     <div class="row createGame">
       <div class="col-12">
         <img src="/uploads/images/{{ Auth::user()->name }}" alt="" style="height:125px; width: 125px; position:relative;">
         <h1>Start Game</h1>
-        {{ Auth::user()->name }}
+        {{ Auth::user()->id }}
 
       </div>
       <div class="col-6">
 
         <div class="addPlayer">
-          <button type="button" name="button">
+          <button type="button" name="button" v-on:click="starterPlayer1({{Auth::user()->id}})">
             <i class="fa fa-user" aria-hidden="true"></i>
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
@@ -28,6 +42,7 @@
             <img src="" alt="">
           </div>
           <h4>Player 1</h4>
+
         </div>
 
       </div>

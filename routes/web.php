@@ -9,7 +9,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('api', 'ShotController@index');
-Route::get('timeClock', 'timeController@index');
+Route::post('time-clock', 'timeController@index');
+Route::post('startGame', 'gameController@start');
 
 
 
@@ -39,3 +40,8 @@ Route::get('end', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('profile','AccountController@edit');
+
+Route::put('profile','AccountController@update');

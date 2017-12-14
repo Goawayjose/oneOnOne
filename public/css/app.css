@@ -47,6 +47,11 @@ nav h4 {
   letter-spacing: -8px;
 }
 
+.profileImg {
+  position: relative;
+  width: 100%;
+}
+
 .createGame .addPlayer button {
   width: 80%;
   height: 175px;
@@ -70,11 +75,12 @@ h1.shotClock {
 }
 
 .players .badge {
-  font-size: 18px;
+  font-size: 25px;
+  width: 100%;
 }
 
 .players h1 {
-  font-size: 80px;
+  font-size: 100px;
 }
 
 footer {
@@ -85,13 +91,16 @@ footer {
 }
 
 img.playerImg_Game {
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
-  background: #AB1D1C;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 25px;
 }
 
 .icon-basketball {
+  position: absolute;
+  top: 64px;
+  left: 0px;
   width: 25px;
   height: 25px;
   fill: white;

@@ -7,5 +7,5 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Player1 extends model
 {
-  //
+
 }

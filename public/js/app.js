@@ -997,6 +997,8 @@ if (document.getElementById('app')) {
     data: {
       player1: null,
       player2: null,
+      possession: "",
+      theWinner: "",
       status: "starting",
       timeClock: 0
     },
@@ -1019,16 +1021,24 @@ if (document.getElementById('app')) {
         if (this.status != "starting") {
           this.timeClock++;
 
-          if (this.timeClock === 24) {
+          if (this.timeClock === 4) {
 
             clearInterval(countDowntimer);
-            axios.post('/timeClock').then(function (response) {
+            axios.post('/time-clock').then(function (response) {
               console.log(response);
             }).catch(function (error) {
               console.log(error);
             });
           }
         }
+      },
+      starterPlayer1: function starterPlayer1() {
+        alert('different');
+        axios.post('/startGame').then(function (response) {
+          console.log(response);
+        }).catch(function (error) {
+          console.log(error);
+        });
       }
     }
 

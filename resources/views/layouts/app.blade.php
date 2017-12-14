@@ -25,7 +25,7 @@
         <nav>
           <ul class="nav text-center">
             <h4>ONE ON ONE</h4>
-        <!--  @guest
+         @guest
                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
             @else
@@ -45,7 +45,7 @@
                 </form>
               </div>
             </li>
-            @endguest -->
+            @endguest
           </ul>
         </nav>
           @yield('content')

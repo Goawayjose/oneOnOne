@@ -54,10 +54,10 @@ const app = new Vue({
         if(this.status != "starting") {
             this.timeClock++;
 
-            if (this.timeClock === 24) {
+            if (this.timeClock === 4) {
 
               clearInterval(countDowntimer);
-              axios.post('/timeClock')
+              axios.post('/time-clock')
               .then(function (response) {
                 console.log(response);
               })
@@ -67,23 +67,26 @@ const app = new Vue({
             }
         }
       },
-      ending() {
-        if(this.player2 > this.player1) {
-          alert('Player 2 Wins');
-        }
-        if(this.player2 < this.player1) {
-          alert('Player 1 Wins');
-        }
+      starterPlayer1() {
+        alert('different');
+        axios.post('/startGame')
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       },
 
-    }
+
+    },
 
 
 });
 
 setInterval(function(){
   app.getData();
-}, 4000);
+}, 5000);
 
 var countDowntimer = setInterval(function(){
   app.countDown();
