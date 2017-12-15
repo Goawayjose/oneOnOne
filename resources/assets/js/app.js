@@ -51,14 +51,7 @@ const app = new Vue({
       countDown() {
         if(this.status != "starting") {
             this.timeClock++;
-<<<<<<< HEAD
-            if (this.timeClock === 5) {
-              app.status = "timeClockViolation";
-=======
-
-            if (this.timeClock === 4) {
-
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
+            if(this.timeClock === 4) {
               clearInterval(countDowntimer);
               axios.post('/time-clock')
               .then(function (response) {
@@ -87,19 +80,9 @@ const app = new Vue({
 
 });
 
-<<<<<<< HEAD
   setInterval(function(){
     app.getData();
   }, 5000);
-
-
-
-
-=======
-setInterval(function(){
-  app.getData();
-}, 5000);
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
 
 
 

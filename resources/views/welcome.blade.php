@@ -9,34 +9,12 @@
   </div>
 
   @else
-
-<<<<<<< HEAD
     <div class="row">
       <div class="col-12 text-center">
         <img src="/img/{{ Auth::user()->id }}.png" alt="" class="profileImg">
       </div>
     </div>
-=======
 
-
-    <div class="row">
-      <div class="col-4">
-          <img class="profileImg" src="{{ asset(Auth::user()->image) }}" alt="">
-      </div>
-      <div class="col-8">
-
-      </div>
-    </div>
-
-
-
-
-    <div class="row createGame">
-      <div class="col-12">
-        <img src="/uploads/images/{{ Auth::user()->name }}" alt="" style="height:125px; width: 125px; position:relative;">
-        <h1>Start Game</h1>
-        {{ Auth::user()->id }}
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
 
     <div class="row text-center">
       <div class="col-4">
@@ -45,7 +23,7 @@
           <h1>12</h1>
         </div>
       </div>
-<<<<<<< HEAD
+
       <div class="col-4">
         <div class="homeInfo">
           <p>Losses</p>
@@ -56,23 +34,9 @@
         <div class="homeInfo">
           <p>APG</p>
           <h1>12</h1>
-=======
-      <div class="col-6">
-
-        <div class="addPlayer">
-          <button type="button" name="button" v-on:click="starterPlayer1({{Auth::user()->id}})">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <i class="fa fa-plus" aria-hidden="true"></i>
-          </button>
-          <div class="playerAdded">
-            <img src="" alt="">
-          </div>
-          <h4>Player 1</h4>
-
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
-        </div>
-      </div>
     </div>
+  </div>
+  </div>
 
     <div class="row">
       <div class="col-12 text-center">
@@ -104,7 +68,6 @@
           </svg>
           <p>Searching for court ...</p>
         </div>
-
         <div class="Start">
           <div class="Park">
             <h4 class="text-left">Washington Park West Court</h4>
@@ -123,7 +86,7 @@
     var num = 0;
     setInterval(function(){
       num++;
-      if(num > 4) {
+      if(num > 2) {
         $('.searching').css('display', 'none');
         $('.Start').css('display', 'block');
       }

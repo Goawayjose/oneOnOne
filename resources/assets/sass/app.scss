@@ -69,7 +69,6 @@ nav {
 
 }
 
-<<<<<<< HEAD
 .mainPageUserImg {
   height: 100px;
   width: 100px;
@@ -81,9 +80,10 @@ nav {
   position: relative;
   left: 50%;
   margin-left: -110px;
+  margin-top: 20px;
 }
 
-.Start,
+
 .searching {
   margin-top: 35px;
 }
@@ -95,23 +95,6 @@ nav {
   width: 100%;
   border: 0px solid transparent;
   border-radius: 3px;
-=======
-.createGame {
-  .addPlayer {
-    button {
-      width: 80%;
-      height: 175px;
-      position: relative;
-      margin: 0px auto;
-    }
-    i {
-      font-size: 56px;
-      &:nth-of-type(2){
-        font-size: 32px;
-      }
-    }
-  }
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
 }
 
 h1.shotClock {
@@ -144,7 +127,6 @@ img.playerImg_Game {
   border-radius: 100px;
   margin-bottom: 25px;
   }
-<<<<<<< HEAD
 
 img.profileImg  {
   height: 220px;
@@ -187,8 +169,7 @@ path:nth-child(1) { animation-delay: -0.4s; }
 path:nth-child(2) { animation-delay: -0.3s; }
 path:nth-child(3) { animation-delay: -0.2s; }
 path:nth-child(4) { animation-delay: -0.1s; }
-=======
->>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
+
 
 .icon-basketball {
   position: absolute;
