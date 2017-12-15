@@ -23,15 +23,13 @@
 
 
       <div v-else>
-        <div class="row shotClockRow">
-        <!--  <div class="col-12 text-center">
-            <p>Shot Clock</p>
-            <h1 class="shotClock">@{{ timeClock }}</h1>
-          </div> -->
+        <div class="row text-center">
+          <h1>@{{ timeClock }}</h1>
         </div>
+
         <div class="row players">
           <div class="col-6 p-4 text-center">
-            <img src="" class="playerImg_Game" alt="">
+            <img src="img/default.jpg" class="playerImg_Game" alt="">
 
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" enable-background="new 0 0 100 100" xml:space="preserve" style="display: none;">
   <defs>
@@ -49,7 +47,7 @@
   </defs>
 </svg>
 
-<svg v-if="possession === 'play'" class="icon-basketball">
+<svg v-if="possession === 'player1'" class="icon-basketball">
   <use xlink:href="#basketball"></use>
 </svg>
 
@@ -63,8 +61,8 @@
           </div>
 
           <div class="col-6 p-4 text-center">
-            <img src="" class="playerImg_Game" alt="">
-            <svg v-if="possession === 'play'" class="icon-basketball">
+            <img src="img/default.jpg" class="playerImg_Game" alt="">
+            <svg v-if="possession === 'player2'" class="icon-basketball">
               <use xlink:href="#basketball"></use>
             </svg>
             <h3 class="badge badge-success">player 2</h3>

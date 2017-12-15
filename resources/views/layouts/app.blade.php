@@ -25,13 +25,15 @@
         <nav>
           <ul class="nav text-center">
             <h4>ONE ON ONE</h4>
-        <!--  @guest
+         @guest
                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
             @else
 
-           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+         <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/{{ Auth::user()->id }}.png" alt="" class="nav-img">
+              </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -45,7 +47,7 @@
                 </form>
               </div>
             </li>
-            @endguest -->
+            @endguest
           </ul>
         </nav>
           @yield('content')

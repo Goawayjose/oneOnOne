@@ -5,7 +5,7 @@
 
 // Variables
 @import "variables";
-$red: #AB1D1C;
+$red: #84191A;
 
 body {
   background-color: black;
@@ -37,12 +37,23 @@ nav {
   }
 }
 
+.nav-img {
+    top: 0px;
+    border-radius: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 15px;
+}
+
+.dropdown-menu {
+    left: -200px;}
+
 .jumbotron {
   min-height: 560px;
   background: $red;
   border-radius: 2px;
   h1  {
-
     font-size: 11em;
       font-weight: bold;
       position: relative;
@@ -52,21 +63,37 @@ nav {
   }
 }
 
-.createGame {
-  .addPlayer {
-    button {
-      width: 80%;
-      height: 175px;
-      position: relative;
-      margin: 0px auto;
-    }
-    i {
-      font-size: 56px;
-      &:nth-of-type(2){
-        font-size: 32px;
-      }
-    }
-  }
+.profileImg {
+  position: relative;
+  width: 100%;
+
+}
+
+.mainPageUserImg {
+  height: 100px;
+  width: 100px;
+}
+
+.Start {
+  display: none;
+  width: 220px;
+  position: relative;
+  left: 50%;
+  margin-left: -110px;
+}
+
+.Start,
+.searching {
+  margin-top: 35px;
+}
+
+.btnStart {
+  color: white;
+  background: $red;
+  height: 60px;
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 3px;
 }
 
 h1.shotClock {
@@ -78,10 +105,11 @@ h1.shotClock {
 
 .players {
   .badge {
-    font-size: 18px;
+    font-size: 25px;
+    width: 100%;
   }
   h1 {
-    font-size: 80px;
+    font-size: 100px;
   }
 }
 
@@ -93,13 +121,58 @@ footer {
 }
 
 img.playerImg_Game {
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
-  background: $red;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 25px;
+  }
+
+img.profileImg  {
+  height: 220px;
+  width: 220px;
+  border-radius: 200px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
+svg.searchin {
+	width: 64px;
+	height: 64px;
+	fill: white;
+}
+
+
+svg.icon-basketball {
+      position: absolute;
+      left:50%;
+      top: 76px;
+      margin-left: -11px;
+      transform: rotate(60deg);
+  }
+
+
+@keyframes spinBall {
+	100% { transform: rotate(360deg); }
+}
+
+
+
+@keyframes wifi {
+	50% { fill: black; }
+}
+
+path {
+	animation: wifi 1s infinite;
+}
+path:nth-child(1) { animation-delay: -0.4s; }
+path:nth-child(2) { animation-delay: -0.3s; }
+path:nth-child(3) { animation-delay: -0.2s; }
+path:nth-child(4) { animation-delay: -0.1s; }
+
 .icon-basketball {
+  position: absolute;
+  top: 64px;
+  left: 0px;
   width: 25px;
   height: 25px;
   fill: white;

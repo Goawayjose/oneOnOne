@@ -17,7 +17,7 @@ nav .nav-link {
 }
 
 nav a {
-  color: #AB1D1C;
+  color: #84191A;
   text-align: right;
 }
 
@@ -32,9 +32,22 @@ nav h4 {
   letter-spacing: -0.7px;
 }
 
+.nav-img {
+  top: 0px;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 15px;
+}
+
+.dropdown-menu {
+  left: -200px;
+}
+
 .jumbotron {
   min-height: 560px;
-  background: #AB1D1C;
+  background: #84191A;
   border-radius: 2px;
 }
 
@@ -47,34 +60,52 @@ nav h4 {
   letter-spacing: -8px;
 }
 
-.createGame .addPlayer button {
-  width: 80%;
-  height: 175px;
+.profileImg {
   position: relative;
-  margin: 0px auto;
+  width: 100%;
 }
 
-.createGame .addPlayer i {
-  font-size: 56px;
+.mainPageUserImg {
+  height: 100px;
+  width: 100px;
 }
 
-.createGame .addPlayer i:nth-of-type(2) {
-  font-size: 32px;
+.Start {
+  display: none;
+  width: 220px;
+  position: relative;
+  left: 50%;
+  margin-left: -110px;
+}
+
+.Start,
+.searching {
+  margin-top: 35px;
+}
+
+.btnStart {
+  color: white;
+  background: #84191A;
+  height: 60px;
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 3px;
 }
 
 h1.shotClock {
   font-size: 120px;
   padding-top: 0px;
   margin-top: -28px;
-  color: #AB1D1C;
+  color: #84191A;
 }
 
 .players .badge {
-  font-size: 18px;
+  font-size: 25px;
+  width: 100%;
 }
 
 .players h1 {
-  font-size: 80px;
+  font-size: 100px;
 }
 
 footer {
@@ -85,13 +116,90 @@ footer {
 }
 
 img.playerImg_Game {
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
-  background: #AB1D1C;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 25px;
+}
+
+img.profileImg {
+  height: 220px;
+  width: 220px;
+  border-radius: 200px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+svg.searchin {
+  width: 64px;
+  height: 64px;
+  fill: white;
+}
+
+svg.icon-basketball {
+  position: absolute;
+  left: 50%;
+  top: 76px;
+  margin-left: -11px;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+@-webkit-keyframes spinBall {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinBall {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes wifi {
+  50% {
+    fill: black;
+  }
+}
+
+@keyframes wifi {
+  50% {
+    fill: black;
+  }
+}
+
+path {
+  -webkit-animation: wifi 1s infinite;
+          animation: wifi 1s infinite;
+}
+
+path:nth-child(1) {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+path:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+path:nth-child(3) {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+path:nth-child(4) {
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
 }
 
 .icon-basketball {
+  position: absolute;
+  top: 64px;
+  left: 0px;
   width: 25px;
   height: 25px;
   fill: white;

@@ -35,7 +35,6 @@ const app = new Vue({
      },
     methods: {
       getData() {
-        console.log('deal');
         var that = this;
           axios.get('/api')
             .then(function (response) {
@@ -43,8 +42,7 @@ const app = new Vue({
               that.player2 = response.data[1];
               that.possession = response.data[2];
               that.status = response.data[3];
-
-              console.log(this.status);
+              console.log(that.status);
             })
             .catch(function (error) {
               console.log(error);
@@ -53,11 +51,10 @@ const app = new Vue({
       countDown() {
         if(this.status != "starting") {
             this.timeClock++;
-
-            if (this.timeClock === 24) {
-
+            if (this.timeClock === 5) {
+              app.status = "timeClockViolation";
               clearInterval(countDowntimer);
-              axios.post('/timeClock')
+              axios.post('/time-clock')
               .then(function (response) {
                 console.log(response);
               })
@@ -67,27 +64,31 @@ const app = new Vue({
             }
         }
       },
-      ending() {
-        if(this.player2 > this.player1) {
-          alert('Player 2 Wins');
-        }
-        if(this.player2 < this.player1) {
-          alert('Player 1 Wins');
-        }
+      starterPlayer1() {
+        alert('different');
+        axios.post('/startGame')
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       },
 
-    }
+
+    },
 
 
 });
 
-setInterval(function(){
-  app.getData();
-}, 4000);
+  setInterval(function(){
+    app.getData();
+  }, 5000);
 
-var countDowntimer = setInterval(function(){
-  app.countDown();
-}, 1000);
+
+
+
+
 
 
 }

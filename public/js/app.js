@@ -997,20 +997,20 @@ if (document.getElementById('app')) {
     data: {
       player1: null,
       player2: null,
+      possession: "",
+      theWinner: "",
       status: "starting",
       timeClock: 0
     },
     methods: {
       getData: function getData() {
-        console.log('deal');
         var that = this;
         axios.get('/api').then(function (response) {
           that.player1 = response.data[0];
           that.player2 = response.data[1];
           that.possession = response.data[2];
           that.status = response.data[3];
-
-          console.log(this.status);
+          console.log(that.status);
         }).catch(function (error) {
           console.log(error);
         });
@@ -1018,17 +1018,24 @@ if (document.getElementById('app')) {
       countDown: function countDown() {
         if (this.status != "starting") {
           this.timeClock++;
-
-          if (this.timeClock === 24) {
-
+          if (this.timeClock === 5) {
+            app.status = "timeClockViolation";
             clearInterval(countDowntimer);
-            axios.post('/timeClock').then(function (response) {
+            axios.post('/time-clock').then(function (response) {
               console.log(response);
             }).catch(function (error) {
               console.log(error);
             });
           }
         }
+      },
+      starterPlayer1: function starterPlayer1() {
+        alert('different');
+        axios.post('/startGame').then(function (response) {
+          console.log(response);
+        }).catch(function (error) {
+          console.log(error);
+        });
       }
     }
 
@@ -1037,10 +1044,6 @@ if (document.getElementById('app')) {
   setInterval(function () {
     app.getData();
   }, 5000);
-
-  var countDowntimer = setInterval(function () {
-    app.countDown();
-  }, 1000);
 }
 
 /***/ }),
