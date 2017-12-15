@@ -61,6 +61,16 @@ nav h4 {
 }
 
 .profileImg {
+<<<<<<< HEAD
+=======
+  position: relative;
+  width: 100%;
+}
+
+.createGame .addPlayer button {
+  width: 80%;
+  height: 175px;
+>>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
   position: relative;
   width: 100%;
 }
@@ -120,6 +130,7 @@ img.playerImg_Game {
   height: 100px;
   border-radius: 100px;
   margin-bottom: 25px;
+<<<<<<< HEAD
 }
 
 img.profileImg {
@@ -194,6 +205,8 @@ path:nth-child(3) {
 path:nth-child(4) {
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s;
+=======
+>>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
 }
 
 .icon-basketball {

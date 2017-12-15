@@ -23,8 +23,16 @@
 
 
       <div v-else>
+<<<<<<< HEAD
         <div class="row text-center">
           <h1>@{{ timeClock }}</h1>
+=======
+        <div class="row shotClockRow">
+         <div class="col-12 text-center">
+            <p>Shot Clock</p>
+            <h1 class="shotClock">@{{ timeClock }}</h1>
+          </div>
+>>>>>>> 358d1515731b6805d135eefa255698be243b2d8e
         </div>
 
         <div class="row players">
