@@ -54,13 +54,74 @@ nav {
   background: $red;
   border-radius: 2px;
   h1  {
-    font-size: 11em;
-      font-weight: bold;
-      position: relative;
-      bottom: 0px;
-      line-height: 146px;
-      letter-spacing: -8px;
+    font-size: 58px;
+    font-weight: bold;
+    position: relative;
+    bottom: 0px;
+    line-height: 61px;
+    letter-spacing: -1px;
   }
+}
+
+.matchUp {
+  display: none;
+  overflow: hidden;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  .matchupDiv {
+    padding-top: 100px;
+    height: 100%;
+    width: 50%;
+    float: left;
+    background: red;
+    img {
+      height: 100px;
+      width: 100px;
+      margin-bottom: 25px;
+      border-radius: 50px;
+    }
+  }
+  .p2 {
+    position: relative;
+    animation: p2move 0.6s linear;
+  }
+  .p1 {
+    position: relative;
+    animation: p1move 0.6s linear;
+  }
+}
+
+@keyframes p2move {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+
+@keyframes p1move {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.Bar {
+  height: 3px;
+  border-radius: 12px;
+  width: 100%;
+  position: relative;
+}
+
+.player1Start {
+  display: none;
 }
 
 .profileImg {
@@ -115,10 +176,23 @@ h1.shotClock {
 }
 
 footer {
+    color: black;
     left: 0px;
     width: 100%;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
+    background: white;
+    z-index: 80;
+}
+
+.endingPlayer {
+  padding-top: 110px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  z-index: 99;
 }
 
 img.playerImg_Game {
@@ -185,5 +259,12 @@ path:nth-child(4) { animation-delay: -0.1s; }
   p {
     font-size: 27px;
     margin-bottom: 4px;
+  }
+}
+
+a.ending {
+  color: $red;
+  &:hover {
+    color: $red;
   }
 }

@@ -997,6 +997,7 @@ if (document.getElementById('app')) {
     data: {
       player1: null,
       player2: null,
+      ending: "",
       possession: "",
       theWinner: "",
       status: "starting",
@@ -1014,6 +1015,14 @@ if (document.getElementById('app')) {
         }).catch(function (error) {
           console.log(error);
         });
+      },
+      startEnd: function startEnd() {
+        if (this.player1 > this.player2) {
+          this.ending = "player2";
+        }
+        if (this.player2 > this.player1) {
+          this.ending = "player1";
+        }
       },
       countDown: function countDown() {
         if (this.status != "starting") {
@@ -1042,7 +1051,7 @@ if (document.getElementById('app')) {
 
   setInterval(function () {
     app.getData();
-  }, 5000);
+  }, 6000);
 }
 
 /***/ }),

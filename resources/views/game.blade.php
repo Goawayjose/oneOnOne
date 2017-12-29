@@ -5,18 +5,37 @@
 <div class="container" >
   <div v-if="status === 'starting'">
 
-      <div class="row">
 
-        <div class="col-12 text-center">
-          <img src="img/default.jpg" alt="">
-          <h1>Player 1's ball</h1>
+
+      <div class="row">
+        <div class="searching text-center">
+          <p>Searching for opponent...</p>
+        </div>
+
+        <div class="matchUp">
+          <div class="matchupDiv p1 text-center bg-primary">
+            <img src="/img/1.png" alt="">
+            <h3>Jose</h3>
+          </div>
+          <div class="matchupDiv p2 text-center bg-success">
+            <img src="/img/2.jpg" alt="" >
+            <h3>Brandon</h3>
+          </div>
+
+        </div>
+
+        <div class="col-12 text-center player1Start">
+          <img src="/img/1.png" alt="" class="profileImg">
+          <h1>Jose's ball</h1>
+          <div class="Bar bg-primary">
+
+          </div>
           <h3>Step on the Check box to start the game</h3>
-          @{{status}}
         </div>
 
 
       </div>
-      </div>
+    </div>
 
 
 
@@ -24,14 +43,15 @@
 
       <div v-else>
         <div class="row text-center">
-          <h1>@{{ timeClock }}</h1>
+          <div class="col-12">
+            <h1><span id="minCount"></span> : <span id="secCount"></span>  </h1>
+          </div>
+
 
         </div>
 
         <div class="row players">
           <div class="col-6 p-4 text-center">
-            <img src="img/default.jpg" class="playerImg_Game" alt="">
-
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" enable-background="new 0 0 100 100" xml:space="preserve" style="display: none;">
   <defs>
     <symbol id="basketball" viewBox="0 0 100 100">
@@ -48,11 +68,16 @@
   </defs>
 </svg>
 
+
+<img src="/img/1.png" alt="" class="playerImg_Game">
 <svg v-if="possession === 'player1'" class="icon-basketball">
   <use xlink:href="#basketball"></use>
 </svg>
 
-            <h3 class="badge badge-primary">player 1</h3>
+            <h3 class="playerName">Jose</h3>
+            <div class="Bar bg-primary">
+
+            </div>
             <h1> @{{ player1 }}
 
             </h1>
@@ -62,28 +87,67 @@
           </div>
 
           <div class="col-6 p-4 text-center">
-            <img src="img/default.jpg" class="playerImg_Game" alt="">
+            <img src="/img/2.jpg" alt="" class="playerImg_Game">
             <svg v-if="possession === 'player2'" class="icon-basketball">
               <use xlink:href="#basketball"></use>
             </svg>
-            <h3 class="badge badge-success">player 2</h3>
+            <h3 class="playerName">Brandon</h3>
+            <div class="Bar bg-success">
+            </div>
 
             <h1>  @{{ player2 }}<h1>
         </div>
+        <div class="col-12 text-center">
+          <a href="#" class="ending" v-on:click="startEnd">End Game</a>
+        </div>
+      </div>
+      <div v-if="ending === 'player1'" class="endingPlayer text-center bg-primary">
+        <img src="/img/1.png" alt="" class="playerImg_Game">
+        <h1>Jose Wins!</h1>
+        <a href="/" v-on:click="endGame" >Close</a>
+      </div>
+      <div v-if="ending === 'player2'" class="endingPlayer text-center bg-success">
+        <img src="/img/2.jpg" alt="" class="playerImg_Game">
+        <h1>Brandon Wins!</h1>
+        <a href="/" v-on:click="endGame" >Close</a>
       </div>
       <footer>
         <div class="row">
           <div class="col-12 text-center">
-            <a href="/end">
-              <button type="button" name="button" class="btn btn-danger">End Game</button>
-            </a>
+            <h3>Washington Park</h3>
+            <p>Pasadena</p>
           </div>
-
         </div>
+
+
       </footer>
     </div>
   </div>
 
 </div>
+
+<script type="text/javascript">
+    var num = 0;
+    var minuteClock = 0;
+    var secondClock = 0;
+    setInterval(function(){
+      num++;
+      secondClock++;
+      $('#secCount').html(secondClock);
+      $('#minCount').html(minuteClock);
+      if(secondClock === 60) {
+        minuteClock++;
+        secondClock = 0;
+      }
+      if(num > 2) {
+        $('.searching').css('display', 'none');
+        $('.matchUp').css('display', 'block');
+      }
+      if(num > 6) {
+        $('.player1Start ').css('display', 'block');
+        $('.matchUp').css('display', 'none');
+      }
+    }, 1000);
+</script>
 
 @endsection

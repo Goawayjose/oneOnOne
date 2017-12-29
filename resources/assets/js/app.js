@@ -28,6 +28,7 @@ const app = new Vue({
      data: {
        player1: null,
        player2: null,
+       ending : "",
        possession: "",
        theWinner: "",
        status: "starting",
@@ -47,6 +48,14 @@ const app = new Vue({
             .catch(function (error) {
               console.log(error);
         });
+      },
+      startEnd() {
+        if(this.player1 > this.player2) {
+          this.ending = "player2";
+        }
+        if(this.player2 > this.player1) {
+          this.ending = "player1";
+        }
       },
       countDown() {
         if(this.status != "starting") {
@@ -82,7 +91,7 @@ const app = new Vue({
 
   setInterval(function(){
     app.getData();
-  }, 5000);
+  }, 6000);
 
 
 
